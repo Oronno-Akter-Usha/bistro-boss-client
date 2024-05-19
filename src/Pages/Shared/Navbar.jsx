@@ -19,11 +19,7 @@ const Navbar = () => {
       <li>
         <a>Our Shop</a>
       </li>
-      <div className="flex justify-center items-center bg-amber-500 rounded-full w-10 h-10 text-gray-200 ">
-        <a className="">
-          <FaCartShopping className="text-2xl" />
-        </a>
-      </div>
+
       <li>
         <a>Sign Out</a>
       </li>
@@ -64,6 +60,11 @@ const Navbar = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+        </div>
+        <div className="flex justify-center items-center bg-amber-500 rounded-full w-10 h-10 text-gray-200 ">
+          <a className="">
+            <FaCartShopping className="text-2xl" />
+          </a>
         </div>
         <div className="">
           <a className="btn">Button</a>
