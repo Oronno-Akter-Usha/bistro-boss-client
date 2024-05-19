@@ -19,7 +19,7 @@ const Navbar = () => {
       <li>
         <a>Our Shop</a>
       </li>
-      <div className="flex justify-center items-center bg-yellow-500 rounded-full w-10 h-10 text-gray-200   ">
+      <div className="flex justify-center items-center bg-amber-500 rounded-full w-10 h-10 text-gray-200 ">
         <a className="">
           <FaCartShopping className="text-2xl" />
         </a>
@@ -31,7 +31,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar pr-5  bg-[#000000c2] text-white fixed z-50 top-0 px-5">
+      <div className="navbar pr-5 bg-opacity-50 bg-black  text-white fixed z-50 top-0 px-5">
         <div className="mr-auto">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,7 +57,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center uppercase">
             <p className="text-3xl">BISTRO BOSS</p>
             <p style={{ letterSpacing: "10px" }}>Restaurant</p>
           </div>
