@@ -8,11 +8,12 @@ import "swiper/css/navigation";
 import { useEffect, useState } from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import Quotation from "./Quotation";
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("http://localhost:3000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -34,13 +35,17 @@ const Testimonial = () => {
       >
         {reviews.map((review) => (
           <SwiperSlide key={review._id}>
-            <div className="md:m-24 text-center">
+            <div className="md:mx-24 text-center">
               <Rating
                 style={{ maxWidth: 180 }}
                 value={review.rating}
                 readOnly
                 className="mx-auto mb-7"
               />
+              <div className="flex justify-center items-center my-10">
+                <Quotation></Quotation>
+                <Quotation></Quotation>
+              </div>
               <p className="text-xl">{review.details}</p>
               <h3 className="text-3xl font-medium text-amber-500 mt-3">
                 {review.name}

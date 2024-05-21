@@ -13,12 +13,20 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        to={"/contactUs"}
+        to={"/ourMenu"}
         className={({ isActive }) =>
           isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
         }
       >
-        Contact us
+        Our Menu
+      </NavLink>
+      <NavLink
+        to={"/order/salads"}
+        className={({ isActive }) =>
+          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
+        }
+      >
+        Order
       </NavLink>
       <NavLink
         to={"/dashboard"}
@@ -29,20 +37,12 @@ const Navbar = () => {
         Dashboard
       </NavLink>
       <NavLink
-        to={"/ourMenu"}
+        to={"/contactUs"}
         className={({ isActive }) =>
           isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
         }
       >
-        Our Menu
-      </NavLink>
-      <NavLink
-        to={"/ourShop"}
-        className={({ isActive }) =>
-          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
-        }
-      >
-        Our Shop
+        Contact us
       </NavLink>
       <NavLink
         to={"/logout"}
