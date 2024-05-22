@@ -1,5 +1,5 @@
 import { FaCartShopping } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navLinks = (
@@ -44,14 +44,13 @@ const Navbar = () => {
       >
         Contact us
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to={"/logout"}
         className={({ isActive }) =>
           isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
         }
-      >
-        Sign Out
-      </NavLink>
+      > Sign Out
+      </NavLink> */}
     </>
   );
   return (
@@ -99,9 +98,9 @@ const Navbar = () => {
             <FaCartShopping className="text-2xl" />
           </a>
         </div>
-        <div className="">
-          <a className="btn">Button</a>
-        </div>
+        <Link to={"/login"} className="ml-2 md:ml-10">
+          <button className="btn  px-5 font-bold">Login</button>
+        </Link>
       </div>
     </div>
   );

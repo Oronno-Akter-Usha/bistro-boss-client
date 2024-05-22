@@ -11,6 +11,9 @@ import slide4 from "../../assets/home/slide4.jpg";
 import SectionTitle from "../Shared/SectionTitle";
 
 const Category = () => {
+  const style =
+    "bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white rounded-lg";
+
   return (
     <div>
       <SectionTitle
@@ -32,55 +35,35 @@ const Category = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper w-full"
       >
-        <SwiperSlide className="w-full mb-10">
-          <img src={slide1} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            Salads
-          </span>
+        <SwiperSlide className="w-full mb-10 rounded-lg">
+          <img src={slide1} alt="" className="relative w-full rounded-lg" />
+          <span className={style}>Salads</span>
         </SwiperSlide>
-        <SwiperSlide className="w-full">
-          <img src={slide2} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            Pizzas
-          </span>
+        <SwiperSlide className="w-full rounded-lg">
+          <img src={slide2} alt="" className="relative w-full rounded-lg" />
+          <span className={style}>Pizzas</span>
         </SwiperSlide>
 
-        <SwiperSlide className="w-full">
-          <img src={slide3} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            Soups
-          </span>
+        <SwiperSlide className="w-full rounded-lg">
+          <img src={slide3} alt="" className="relative w-full rounded-lg" />
+          <span className={style}>Soups</span>
         </SwiperSlide>
-        <SwiperSlide className="w-full">
-          <img src={slide4} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            desserts
-          </span>
+        <SwiperSlide className="w-full rounded-lg">
+          <img src={slide4} alt="" className="relative w-full rounded-lg" />
+          <span className={style}>desserts</span>
         </SwiperSlide>
-        {/* <SwiperSlide className="w-full">
-          <img src={slide5} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            Salads
-          </span>
-        </SwiperSlide> */}
-        <SwiperSlide className="w-full">
-          <img src={slide2} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            Pizzas
-          </span>
+        <SwiperSlide className="w-full rounded-lg">
+          <img src={slide2} alt="" className="relative w-full rounded-lg" />
+          <span className={style}>Pizzas</span>
         </SwiperSlide>
 
-        <SwiperSlide className="w-full">
-          <img src={slide3} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            Soups
-          </span>
+        <SwiperSlide className="w-full rounded-lg">
+          <img src={slide3} alt="" className="relative w-full rounded-lg" />
+          <span className={style}>Soups</span>
         </SwiperSlide>
-        <SwiperSlide className="w-full">
-          <img src={slide4} alt="" className="relative w-full" />
-          <span className="bg-opacity-20 bg-gradient-to-b from-[#00000000] to-[#000000b3] w-full md:text-4xl uppercase text-center  absolute bottom-0 md:p-5 text-white">
-            desserts
-          </span>
+        <SwiperSlide className="w-full rounded-lg">
+          <img src={slide4} alt="" className="relative w-full rounded-lg" />
+          <span className={style}>desserts</span>
         </SwiperSlide>
       </Swiper>
     </div>

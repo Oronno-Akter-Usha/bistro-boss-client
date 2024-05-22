@@ -41,7 +41,7 @@ const Order = () => {
             onSelect={(index) => setTabIndex(index)}
             className={"uppercase text-center"}
           >
-            <TabList classID="">
+            <TabList>
               <Tab>salad</Tab>
               <Tab>pizza</Tab>
               <Tab>soups</Tab>

@@ -9,10 +9,10 @@ const Cover = ({ img, title, description }) => {
       strength={-200}
     >
       <div className="hero md:h-[600px] p-8 py-20 md:py-32 md:px-48">
-        <div className="hero-overlay bg-opacity-60 bg-black md:py-20"></div>
+        <div className="hero-overlay bg-opacity-60 bg-black md:py-20 rounded-lg"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">{title}</h1>
+            <h1 className="mb-5 text-5xl font-bold uppercase">{title}</h1>
             <p className="mb-5">{description}</p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 const FoodCard = ({ item }) => {
   const { name, image, price, recipe } = item;
   return (
-    <div className="card md:w-[400px] h-[600px] bg-white rounded-none pb-10">
+    <div className="card md:w-[400px] h-[600px] bg-white pb-10 rounded-lg">
       <figure className="w-full relative">
         <img src={image} alt="food image" className="w-full" />
         <p className="absolute top-5 right-5 px-4 py-2 bg-black text-white">

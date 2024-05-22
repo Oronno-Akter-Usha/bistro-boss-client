@@ -1,5 +1,6 @@
 import img from "../../assets/contact/banner.jpg";
 import useScroll from "../../hooks/useScroll";
+import Cover from "../Shared/Cover";
 import PageTitle from "../Shared/PageTitle";
 import Location from "./Location";
 
@@ -10,10 +11,12 @@ const ContactUs = () => {
     <>
       <PageTitle title={"Contact Us"}></PageTitle>
       <div className={`${style} md:mb-36`}>
-        <img src={img} alt="" />
-        <div className={`mx-5 md:mx-10 ${style}`}>
-          <Location></Location>
-        </div>
+        <Cover
+          img={img}
+          title={"Contact Us"}
+          description={"Would you like to try a dish?"}
+        ></Cover>
+        <Location></Location>
       </div>
     </>
   );
