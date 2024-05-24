@@ -1,7 +1,10 @@
 import { FaCartShopping } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+
   const navLinks = (
     <>
       <NavLink
@@ -54,7 +57,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
+    <div className="">
       <div className="navbar pr-5 bg-opacity-80 bg-black md:text-white fixed z-50 top-0 px-5">
         <div className="mr-auto">
           <div className="dropdown">
@@ -93,14 +96,51 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">{navLinks}</ul>
         </div>
-        <div className="flex justify-center items-center bg-amber-500 rounded-full w-10 h-10 text-gray-200 ">
-          <a className="">
-            <FaCartShopping className="text-2xl" />
-          </a>
-        </div>
-        <Link to={"/login"} className="ml-2 md:ml-10">
-          <button className="btn  px-5 font-bold">Login</button>
+        <Link className="text-white hover:text-amber-500 mr-9 relative">
+          <FaCartShopping className="text-3xl" />
+          <div className="badge absolute bottom-0 -right-3 border-none text-xs bg-red-600 text-white">
+            0
+          </div>
         </Link>
+
+        <div className="text-black">
+          {user ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
+                <div className="w-10 rounded-full ">
+                  <img
+                    src={
+                      user?.photoURL ||
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStCJpmc7wNF8Ti2Tuh_hcIRZUGOc23KBTx2A&s"
+                    }
+                  />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <button className="">
+                    {user?.displayName || "user name not found"}
+                  </button>
+                </li>
+
+                <li>
+                  <button onClick={logOut} className="">
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to={"/login"}>
+              <button className="btn px-3 py-0 md:px-5 bg-gradient-to-br from-amber-400 to-amber-600 text-white border-none">
+                Login
+              </button>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

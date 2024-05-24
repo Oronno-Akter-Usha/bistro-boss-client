@@ -5,6 +5,9 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import OurMenu from "../Pages/OurMenu/OurMenu";
 import Order from "../Pages/Order/Order";
 import Login from "../Pages/Login/Login";
+import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
+// import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +17,11 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home></Home> },
       {
         path: "/contactUs",
-        element: <ContactUs></ContactUs>,
+        element: (
+          <PrivateRoute>
+            <ContactUs></ContactUs>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/ourMenu",
@@ -27,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>,
       },
     ],
   },
