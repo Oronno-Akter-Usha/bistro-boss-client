@@ -20,7 +20,7 @@ const SignUp = () => {
   // navigation
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location?.state || "/";
+  const from = location.state?.from?.pathname || "/";
   console.log(from);
 
   const onSubmit = (data) => {

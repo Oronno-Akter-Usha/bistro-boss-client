@@ -1,59 +1,21 @@
 import { FaCartShopping } from "react-icons/fa6";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import NavLinks from "./NavLinks";
+import useCart from "../../hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [cart] = useCart();
+  console.log(cart.length);
 
   const navLinks = (
     <>
-      <NavLink
-        to={"/"}
-        className={({ isActive }) =>
-          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
-        }
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to={"/ourMenu"}
-        className={({ isActive }) =>
-          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
-        }
-      >
-        Our Menu
-      </NavLink>
-      <NavLink
-        to={"/order/salads"}
-        className={({ isActive }) =>
-          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
-        }
-      >
-        Order
-      </NavLink>
-      <NavLink
-        to={"/dashboard"}
-        className={({ isActive }) =>
-          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
-        }
-      >
-        Dashboard
-      </NavLink>
-      <NavLink
-        to={"/contactUs"}
-        className={({ isActive }) =>
-          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
-        }
-      >
-        Contact us
-      </NavLink>
-      {/* <NavLink
-        to={"/logout"}
-        className={({ isActive }) =>
-          isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
-        }
-      > Sign Out
-      </NavLink> */}
+      <NavLinks title={"Home"} pathName={"/"}></NavLinks>
+      <NavLinks title={"Our Menu"} pathName={"/ourMenu"}></NavLinks>
+      <NavLinks title={"Order"} pathName={"/order/salads"}></NavLinks>
+      <NavLinks title={"Dashboard"} pathName={"/dashboard"}></NavLinks>
+      <NavLinks title={" Contact us"} pathName={"/contactUs"}></NavLinks>
     </>
   );
   return (
@@ -99,7 +61,7 @@ const Navbar = () => {
         <Link className="text-white hover:text-amber-500 mr-9 relative">
           <FaCartShopping className="text-3xl" />
           <div className="badge absolute bottom-0 -right-3 border-none text-xs bg-red-600 text-white">
-            0
+            {cart.length}
           </div>
         </Link>
 
