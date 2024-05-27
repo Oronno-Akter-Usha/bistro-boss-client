@@ -50,15 +50,21 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <div className="flex flex-col justify-center items-center uppercase text-white">
+          <Link
+            to={"/"}
+            className="flex flex-col justify-center items-center uppercase text-white"
+          >
             <h3 className=" text-xl md:text-3xl">BISTRO BOSS</h3>
             <p className="md:tracking-[9px] tracking-[2px]">Restaurant</p>
-          </div>
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">{navLinks}</ul>
         </div>
-        <Link className="text-white hover:text-amber-500 mr-9 relative">
+        <Link
+          to={"/dashboard/cart"}
+          className="text-white hover:text-amber-500 mr-9 relative"
+        >
           <FaCartShopping className="text-3xl" />
           <div className="badge absolute bottom-0 -right-3 border-none text-xs bg-red-600 text-white">
             {cart.length}
