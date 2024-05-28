@@ -11,8 +11,8 @@ import useScroll from "../../hooks/useScroll";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
+import SocialLogin from "../Shared/SocialLogin";
 
 const Login = () => {
   useScroll();
@@ -144,18 +144,12 @@ const Login = () => {
               </form>
               <div className="space-y-4 mt-5 text-center">
                 <p className="text-amber-600">
-                  New here?{" "}
-                  <Link to="/signUp" className="font-bold">
+                  New here?
+                  <Link to="/signUp" className="font-bold ml-1">
                     Create a New Account
                   </Link>
                 </p>
-
-                <p>Or sign in with</p>
-                <div className="flex justify-center items-center gap-5 text-2xl">
-                  <FaFacebookF />
-                  <FaGoogle />
-                  <FaGithub />
-                </div>
+                <SocialLogin></SocialLogin>
               </div>
             </div>
           </div>

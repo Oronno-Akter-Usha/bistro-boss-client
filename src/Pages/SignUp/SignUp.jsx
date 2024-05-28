@@ -4,12 +4,14 @@ import PageTitle from "../Shared/PageTitle";
 import useScroll from "../../hooks/useScroll";
 import useAuth from "../../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../Shared/SocialLogin";
 
 const SignUp = () => {
   useScroll();
+  const axiosPublic = useAxiosPublic();
   const { createUser, updateUserProfile } = useAuth();
   const {
     register,
@@ -29,25 +31,34 @@ const SignUp = () => {
       .then((result) => {
         console.log(result.user);
         updateUserProfile(data.name, data.photoURL).then(() => {
-          navigate(from);
-          Swal.fire({
-            title: "Register Successfully",
-            confirmButtonText: "Ok",
-            confirmButtonColor: "#ea580c",
-            showClass: {
-              popup: `
-            animate__animated
-            animate__fadeInUp
-            animate__faster
-          `,
-            },
-            hideClass: {
-              popup: `
-            animate__animated
-            animate__fadeOutDown
-            animate__faster
-          `,
-            },
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              console.log("user added to the database");
+              navigate(from);
+              Swal.fire({
+                title: "Register Successfully",
+                confirmButtonText: "Ok",
+                confirmButtonColor: "#ea580c",
+                showClass: {
+                  popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `,
+                },
+                hideClass: {
+                  popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `,
+                },
+              });
+            }
           });
         });
       })
@@ -175,12 +186,7 @@ const SignUp = () => {
                   </Link>
                 </p>
 
-                <p>Or sign in with</p>
-                <div className="flex justify-center items-center gap-5 text-2xl">
-                  <FaFacebookF />
-                  <FaGoogle />
-                  <FaGithub />
-                </div>
+                <SocialLogin></SocialLogin>
               </div>
             </div>
           </div>
