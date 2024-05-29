@@ -13,6 +13,7 @@ import useAuth from "../../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin";
+import "../Shared/Button.css";
 
 const Login = () => {
   useScroll();
@@ -43,7 +44,10 @@ const Login = () => {
         Swal.fire({
           title: "Login Successfully",
           confirmButtonText: "Ok",
-          confirmButtonColor: "#ea580c",
+          customClass: {
+            confirmButton: "btn-primary",
+          },
+          buttonsStyling: false,
           showClass: {
             popup: `
             animate__animated
@@ -134,10 +138,7 @@ const Login = () => {
 
                 <div className="form-control mt-6">
                   {/* TODO: apply disabled for re captcha */}
-                  <button
-                    disabled={false}
-                    className="btn bg-primary text-white"
-                  >
+                  <button disabled={false} className="btn-color text-white">
                     Login
                   </button>
                 </div>

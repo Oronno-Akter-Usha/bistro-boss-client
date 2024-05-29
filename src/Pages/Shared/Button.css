@@ -1,0 +1,7 @@
+.swal2-confirm.btn-primary {
+  @apply bg-primary text-white py-2 px-4 rounded border-none;
+}
+
+.btn-color {
+  @apply btn bg-gradient-to-br from-amber-400 to-primary text-white border-none;
+}

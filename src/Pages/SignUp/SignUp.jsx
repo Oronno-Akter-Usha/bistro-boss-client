@@ -42,7 +42,10 @@ const SignUp = () => {
               Swal.fire({
                 title: "Register Successfully",
                 confirmButtonText: "Ok",
-                confirmButtonColor: "#ea580c",
+                customClass: {
+                  confirmButton: "btn-primary",
+                },
+                buttonsStyling: false,
                 showClass: {
                   popup: `
                 animate__animated
@@ -173,7 +176,7 @@ const SignUp = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                  <button className="btn bg-primary text-white">Sign Up</button>
+                  <button className="btn-color text-white">Sign Up</button>
                 </div>
               </form>
               <div className="space-y-4 mt-5 text-center">

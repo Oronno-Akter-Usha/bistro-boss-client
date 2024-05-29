@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import "./Button.css";
 
 const SocialLogin = () => {
   const { googleSignIn } = useAuth();
@@ -25,7 +26,10 @@ const SocialLogin = () => {
           Swal.fire({
             title: "Login Successfully",
             confirmButtonText: "Ok",
-            confirmButtonColor: "#ea580c",
+            customClass: {
+              confirmButton: "btn-primary",
+            },
+            buttonsStyling: false,
             showClass: {
               popup: `
             animate__animated
