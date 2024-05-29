@@ -67,7 +67,7 @@ const FoodCard = ({ item }) => {
       <div className="">
         <button
           onClick={handleAddToCart}
-          className="btn btn-outline bg-[#E8E8E8] px-10 uppercase text-amber-600 border-0  border-b-4 border-amber-600 hover:border-amber-600"
+          className="btn btn-outline bg-[#E8E8E8] px-10 uppercase text-primary border-0  border-b-4 border-primary hover:border-primary"
         >
           Add to Cart
         </button>

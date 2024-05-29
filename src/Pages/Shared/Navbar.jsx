@@ -63,7 +63,7 @@ const Navbar = () => {
         </div>
         <Link
           to={"/dashboard/cart"}
-          className="text-white hover:text-amber-500 mr-9 relative"
+          className="text-white hover:text-primary mr-9 relative"
         >
           <FaCartShopping className="text-3xl" />
           <div className="badge absolute bottom-0 -right-3 border-none text-xs bg-red-600 text-white">
@@ -103,7 +103,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to={"/login"}>
-              <button className="btn px-3 py-0 md:px-5 bg-gradient-to-br from-amber-400 to-amber-600 text-white border-none">
+              <button className="btn px-3 py-0 md:px-5 bg-gradient-to-br from-amber-400 to-primary text-white border-none">
                 Login
               </button>
             </Link>

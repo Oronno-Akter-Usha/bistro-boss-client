@@ -2,9 +2,11 @@ import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SocialLogin = () => {
   const { googleSignIn } = useAuth();
+  const axiosPublic = useAxiosPublic();
 
   // navigation
   const navigate = useNavigate();
@@ -14,27 +16,31 @@ const SocialLogin = () => {
   const handleSocialLogin = (socilaSignIn) => {
     socilaSignIn()
       .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate(from);
-        Swal.fire({
-          title: "Login Successfully",
-          confirmButtonText: "Ok",
-          confirmButtonColor: "#ea580c",
-          showClass: {
-            popup: `
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+        };
+        axiosPublic.post("/users", userInfo).then(() => {
+          navigate(from);
+          Swal.fire({
+            title: "Login Successfully",
+            confirmButtonText: "Ok",
+            confirmButtonColor: "#ea580c",
+            showClass: {
+              popup: `
             animate__animated
             animate__fadeInUp
             animate__faster
           `,
-          },
-          hideClass: {
-            popup: `
+            },
+            hideClass: {
+              popup: `
             animate__animated
             animate__fadeOutDown
             animate__faster
           `,
-          },
+            },
+          });
         });
       })
       .catch((error) => console.error(error));

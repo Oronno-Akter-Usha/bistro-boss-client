@@ -47,7 +47,7 @@ const Testimonial = () => {
                 <Quotation></Quotation>
               </div>
               <p className="text-xl">{review.details}</p>
-              <h3 className="text-3xl font-medium text-amber-500 mt-3">
+              <h3 className="text-3xl font-medium text-primary mt-3">
                 {review.name}
               </h3>
             </div>

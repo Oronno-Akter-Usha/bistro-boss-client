@@ -6,7 +6,7 @@ const DashboardNavLinks = ({ pathName, icon, title }) => {
       to={pathName}
       className={({ isActive }) =>
         isActive
-          ? "font-bold  text-amber-600 hover:bg-gray-200  flex p-2  items-center gap-2 rounded-lg"
+          ? "font-bold  text-primary hover:bg-gray-200  flex p-2  items-center gap-2 rounded-lg"
           : " hover:bg-gray-200 flex p-2 items-center gap-2 rounded-lg"
       }
     >

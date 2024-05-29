@@ -51,14 +51,14 @@ const Cart = () => {
                 Total orders: {cart.length}{" "}
               </h2>
               <h2 className="text-2xl font-bold">total price: ${totalPrice}</h2>
-              <button className="btn bg-amber-600 text-white uppercase">
+              <button className="btn bg-primary text-white uppercase">
                 pay
               </button>
             </div>
             <div className="overflow-x-auto p-5 md:px-12">
               <table className="table">
                 {/* head */}
-                <thead className="bg-amber-600 text-white">
+                <thead className="bg-primary text-white">
                   <tr>
                     <th></th>
                     <th>ITEM IMAGE</th>
@@ -102,7 +102,7 @@ const Cart = () => {
           </h2>
           <Link
             to={"/order/salads"}
-            className="btn btn-outline bg-white px-10 uppercase text-amber-600 border-0  border-b-4 border-amber-600 hover:border-amber-600 w-fit mx-auto mt-10"
+            className="btn btn-outline bg-white px-10 uppercase text-primary border-0  border-b-4 border-primary hover:border-primary w-fit mx-auto mt-10"
           >
             Add your favourite food
           </Link>

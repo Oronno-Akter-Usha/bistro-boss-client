@@ -136,14 +136,14 @@ const Login = () => {
                   {/* TODO: apply disabled for re captcha */}
                   <button
                     disabled={false}
-                    className="btn bg-amber-600 text-white"
+                    className="btn bg-primary text-white"
                   >
                     Login
                   </button>
                 </div>
               </form>
               <div className="space-y-4 mt-5 text-center">
-                <p className="text-amber-600">
+                <p className="text-primary">
                   New here?
                   <Link to="/signUp" className="font-bold ml-1">
                     Create a New Account

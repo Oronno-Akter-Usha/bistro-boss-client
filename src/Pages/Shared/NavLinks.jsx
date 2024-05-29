@@ -5,7 +5,7 @@ const NavLinks = ({ pathName, title }) => {
     <NavLink
       to={pathName}
       className={({ isActive }) =>
-        isActive ? "font-bold mr-9 text-amber-600" : "mr-9"
+        isActive ? "font-bold mr-9 text-primary" : "mr-9"
       }
     >
       {title}
