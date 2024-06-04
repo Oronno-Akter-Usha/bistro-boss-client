@@ -14,13 +14,15 @@ import { IoIosMail } from "react-icons/io";
 import { BiSolidFoodMenu } from "react-icons/bi";
 import useScroll from "../../hooks/useScroll";
 import useCart from "../../hooks/useCart";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
   useScroll();
   const [cart] = useCart();
 
   // Todo: get isAdmin value from the database
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
+  // const isAdmin = true;
 
   return (
     <div className="flex ">
