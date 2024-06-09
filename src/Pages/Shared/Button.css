@@ -1,5 +1,5 @@
 .swal2-confirm.btn-primary {
-  @apply bg-gradient-to-r from-[#835D23] to-[#B58130] text-white  py-2 px-4 rounded border-none;
+  @apply bg-gradient-to-r from-[#835D23] to-[#B58130] text-white py-2 px-4 rounded border-none;
 }
 
 .btn-color {

@@ -1,30 +1,23 @@
 import { Navigate, useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
 import useAuth from "../hooks/useAuth";
+import useAdmin from "../hooks/useAdmin";
 
-const PrivateRoute = ({ children }) => {
+const AdminRoute = ({ children }) => {
   const { user, loading } = useAuth();
-
+  const [isAdmin, isAdminLoading] = useAdmin();
   const location = useLocation();
-  console.log(location.pathname);
 
-  if (loading) {
+  if (loading || isAdminLoading) {
     return (
       <div className="h-screen w-full flex items-center justify-center">
         <span className="loading loading-spinner loading-lg text-primary"></span>
       </div>
     );
   }
-
-  if (user) {
+  if (user && isAdmin) {
     return children;
   }
-
-  return <Navigate to={"/login"} state={{ from: location }} replace></Navigate>;
+  <Navigate to="/" state={{ from: location }} replace></Navigate>;
 };
 
-PrivateRoute.propTypes = {
-  children: PropTypes.node,
-};
-
-export default PrivateRoute;
+export default AdminRoute;

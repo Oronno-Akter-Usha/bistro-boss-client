@@ -50,7 +50,7 @@ const SocialLogin = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="">
+    <div>
       <p>Or sign in with</p>
       <div className="flex justify-center items-center gap-5 text-2xl mt-4">
         <button>
