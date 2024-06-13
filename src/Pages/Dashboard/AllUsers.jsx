@@ -4,6 +4,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { MdDelete } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import PageTitle from "../Shared/PageTitle";
 
 const AllUsers = () => {
   const axiosSecure = useAxiosSecure();
@@ -61,6 +62,7 @@ const AllUsers = () => {
 
   return (
     <>
+      <PageTitle title="All Users"></PageTitle>
       {users.length > 0 ? (
         <div className="w-full mx-auto">
           <SectionTitle
