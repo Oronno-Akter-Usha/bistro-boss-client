@@ -48,12 +48,20 @@ const Cart = () => {
           <div className="bg-white mx-5 md:mx-20 rounded-lg">
             <div className="uppercase flex justify-between items-center p-5 md:px-12">
               <h2 className="text-2xl font-bold">
-                Total orders: {cart.length}{" "}
+                Total orders: {cart.length}
               </h2>
               <h2 className="text-2xl font-bold">total price: ${totalPrice}</h2>
-              <button className="btn bg-primary text-white uppercase">
-                pay
-              </button>
+              {cart.length > 0 ? (
+                <Link to="/dashboard/payment">
+                  <button className="btn bg-primary text-white uppercase ">
+                    pay
+                  </button>{" "}
+                </Link>
+              ) : (
+                <button className="btn bg-primary text-white uppercase disabled">
+                  pay
+                </button>
+              )}
             </div>
             <div className="overflow-x-auto p-5 md:px-12">
               <table className="table">
